@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>CarFree</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">CarFree</h1>
+            <p class="lead text-center">Live a CarFree life.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 bg-light sidebar">
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text inputGroup-sizing-sm"
+                                id="inputDestination">Destination:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text inputGroup-sizing-sm" id="inputDeparture">Departure
+                                Time:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <select class="custom-select" id="inputDuration" aria-label="How many hours will you be there?">
+                            <option selected>Time at Destination</option>
+                            <option value="1">One-half</option>
+                            <option value="2">One</option>
+                            <option value="3">Two</option>
+                            <option value="4">Three</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Hours</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+                <h4 class="d-flex justify-content-between">
+                    <span>YOUR TRIP:</span>
+                </h4>
+                <div>
+                    
+                </div>
+
+            </div>
+
+            <div class="col-md-8 float-right" id="mapDisplay">
+                <img class="img-responsive" src="examplemap.png" alt="map">
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
