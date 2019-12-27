@@ -58,19 +58,29 @@
                         </div>
                     </div>
                 </div>
-
-
                 <br>
                 <h4 class="d-flex justify-content-between">
                     <span>YOUR TRIP:</span>
                 </h4>
                 <div>
-                    
+                    <h6>Departure Time: <span id="departureOutput"></span></h6>
+                    <h6>Arrival Time: <span id="arrivalOutput"></span></h6>
+                    <h6>Return Departure Time: <span id="returnDepartureOutput"></span></h6>
+                    <h6>Return Arrival Time: <span id="returnArrivalOutput"></span></h6>
                 </div>
 
+
+
+                <!-- // here's where the forecast for each hour of the walk should be prepended or appended -->
+                <div class="row">
+                    <div class="col-md-4" id="forecastBlocks">
+                        
+
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-8 float-right" id="mapDisplay">
+            <div class="col-md-8 float-right justify-content-between" id="mapDisplay">
                 <img class="img-responsive" src="examplemap.png" alt="map">
             </div>
 
