@@ -12,85 +12,87 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4 text-center">CarFree</h1>
-            <p class="lead text-center">Live a CarFree life.</p>
+    <div class="container-fluid">
+        <div class="row jumbotron" id="skyline">
+            <div class="col-12">
+                <h1 class="display-4 text-center" id="pageTitle">CarFree</h1><br>
+                <p class="lead text-center" id="pageIntro">Live a CarFree life.</p>
+            </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 bg-light sidebar">
-                <div class="row">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text inputGroup-sizing-sm"
-                                id="inputDestination">Destination:</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+            <div class="col-xs-12 col-md-4">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text inputGroup-sizing-sm" id="inputDestination">Destination:</span>
                     </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm">
                 </div>
 
-                <div class="row">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text inputGroup-sizing-sm" id="inputDepartureTime">Departure
-                                Time:</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text inputGroup-sizing-sm" id="inputDepartureTime">Departure
+                            Time:</span>
                     </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm">
                 </div>
 
-                <div class="row">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text inputGroup-sizing-sm" id="inputTimeAtDestination">Minutes at Destination:</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text inputGroup-sizing-sm" id="inputTimeAtDestination">Minutes at
+                            Destination:</span>
                     </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm">
                 </div>
-
                 <button type="button" class="btn btn-secondary btn-lg btn-block" id="submitBtn">Go</button>
-
                 <br>
+
                 <h4 class="d-flex justify-content-between">
-                    <span>YOUR TRIP:</span>
-                </h4>
-                <div>
-                    <h6>Departure Time: <span id="departureOutput"></span></h6>
-                    <h6>Arrival Time: <span id="arrivalOutput"></span></h6>
-                    <h6>Return Departure Time: <span id="returnDepartureOutput"></span></h6>
-                    <h6>Return Arrival Time: <span id="returnArrivalOutput"></span></h6>
-                </div>
-
-
-
-                <!-- // here's where the forecast for each hour of the walk should be prepended or appended -->
-                <div class="row">
-                    <div class="col-md-4" id="forecastBlocks">
-                        
-
+                        <span>Your trip:</span>
+                    </h4>
+                    <div>
+                        <h6>Departure Time: <span id="departureOutput"></span></h6>
+                        <h6>Arrival Time: <span id="arrivalOutput"></span></h6>
+                        <h6>Return Departure Time: <span id="returnDepartureOutput"></span></h6>
+                        <h6>Return Arrival Time: <span id="returnArrivalOutput"></span></h6>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-8 float-right justify-content-between" id="mapDisplay">
-                <!-- <img class="img-responsive" src="examplemap.png" alt="map"> -->
             </div>
 
 
-
+            <div class="col-xs-12 col-md-8 float-right padding" id="mapDisplay">
+            </div>
 
         </div>
     </div>
+    <br>
+    
 
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=initMap"> </script>
-<script src="javascript.js"></script>
+    <!-- // here's where the forecast for each hour of the walk should be prepended or appended -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-4" id="forecastBlocks"></div>
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+    </div>
+
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=initMap"> </script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
