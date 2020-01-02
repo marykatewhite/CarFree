@@ -14,9 +14,9 @@
 <body>
     <div class="container-fluid">
         <div class="row jumbotron" id="skyline">
-            <div class="col-12">
+            <div class="col-12 align-middle">
                 <h1 class="display-4 text-center" id="pageTitle">CarFree</h1><br>
-                <p class="lead text-center" id="pageIntro">Live a CarFree life.</p>
+                <h3 class="lead text-center" id="pageIntro">Live a CarFree life.</h3>
             </div>
         </div>
     </div>
@@ -53,15 +53,19 @@
                 <button type="button" class="btn btn-secondary btn-lg btn-block" id="submitBtn">Go</button>
                 <br>
 
-                <h4 class="d-flex justify-content-between">
-                        <span>Your trip:</span>
-                    </h4>
-                    <div>
-                        <h6>Departure Time: <span id="departureOutput"></span></h6>
-                        <h6>Arrival Time: <span id="arrivalOutput"></span></h6>
-                        <h6>Return Departure Time: <span id="returnDepartureOutput"></span></h6>
-                        <h6>Return Arrival Time: <span id="returnArrivalOutput"></span></h6>
+
+
+                <div class="card">
+                    <div class="card-header">
+                        Your Trip:
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Departure Time: <span id="departureOutput"></span></li>
+                        <li class="list-group-item">Arrival Time: <span id="arrivalOutput"></span></li>
+                        <li class="list-group-item">Return Departure Time: <span id="returnDepartureOutput"></span></li>
+                        <li class="list-group-item">Return Arrival Time: <span id="returnArrivalOutput"></span></li>
+                    </ul>
+                </div>
             </div>
 
 
@@ -71,7 +75,7 @@
         </div>
     </div>
     <br>
-    
+
 
 
     <!-- // here's where the forecast for each hour of the walk should be prepended or appended -->
