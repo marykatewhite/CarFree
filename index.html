@@ -25,45 +25,26 @@
         <div class="row">
             <div class="col-xs-12 col-md-4">
 
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-lg mb-3" id="destinationBox">
                     <div class="input-group-prepend">
-                        <span class="input-group-text inputGroup-sizing-sm" id="#">Destination:</span>
+                        <span class="input-group-text inputGroup-sizing-lg" id="#">Destination:</span>
                     </div>
                     <input id="inputDestination" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm">
                 </div>
-
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text inputGroup-sizing-sm" id="inputDepartureTime">Departure
-                            Time:</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm">
-                </div>
-
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text inputGroup-sizing-sm" id="inputTimeAtDestination">Minutes at
-                            Destination:</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm">
-                </div>
+                
                 <button type="button" class="btn btn-secondary btn-lg btn-block" id="submitBtn">Go</button>
-                <br>
 
+<br>
 
-
-                <div class="card">
+                <div class="card" id="yourTrip">
                     <div class="card-header">
                         Your Trip:
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Departure Time: <span id="departureOutput"></span></li>
                         <li class="list-group-item">Arrival Time: <span id="arrivalOutput"></span></li>
-                        <li class="list-group-item">Return Departure Time: <span id="returnDepartureOutput"></span></li>
-                        <li class="list-group-item">Return Arrival Time: <span id="returnArrivalOutput"></span></li>
+                        <li class="list-group-item">Is it gone rain? <span id="arrivalOutput"></span></li>
                     </ul>
                 </div>
             </div>
@@ -94,7 +75,8 @@
     </div>
 
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=createMap&libraries=places"> </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=createMap&libraries=places"> </script>
     <script src="javascript.js"></script>
 </body>
 

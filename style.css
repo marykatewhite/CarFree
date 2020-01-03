@@ -6,6 +6,7 @@
     background-position: center;
 }
 
+
 #pageTitle {
     font-size: 90px;
     color: white;
@@ -18,5 +19,5 @@
 
 #mapDisplay {
     width: 100%;
-    height: 455px;
+    height: 335px;
 }
