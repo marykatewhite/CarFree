@@ -203,10 +203,11 @@ directionsRenderer.setMap(map);
 
 var destination = document.getElementById('inputDestination').value;
 var directionObject = {
-  origin: "102 UR Drive, Richmond, VA 23173",
+  origin: "Robins School of Business",
   destination: destination,
   travelMode: "WALKING",
 }
+
 var directionsService = new google.maps.DirectionsService();
 
 directionsService.route(directionObject, function(result, status) { 
