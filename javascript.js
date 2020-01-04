@@ -1,5 +1,5 @@
 // Created the map and map settings to be displayed on the page.
-  var map, infoWindow;
+  var map, marker;
 
   function createMap(){
     var options = {
@@ -116,9 +116,33 @@
         },
         ]
     };
-// stuck here....
-    map = new google.maps.Map(document.getElementById("mapDisplay"), options);
 
+
+// stuck here....
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+
+    map = new google.maps.Map(document.getElementById("mapDisplay"), options); 
+    directionsRenderer.setMap(map);
+
+
+    const directionObject = {
+      origin: "Richmond,VA",
+      destination: "Chicago, IL",
+      travelMode: "WALKING",
+  }
+    const directionsService = new google.maps.DirectionsService();
+
+    directionsService.route(directionObject, function(result, status) { 
+      if (status == 'OK') { 
+        directionsRenderer.setDirections(result); 
+        
+        const duration = result.routes[0].legs[0].duration.text
+        
+        document.getElementById("arrivalOutput").innerHTML = duration;
+      }
+      }
+      );
+      
     var input = document.getElementById("inputDestination");
     var searchBox = new google.maps.places.SearchBox(input);
 
@@ -127,36 +151,36 @@
     });
 
 
-    // var markers = [];
+    var markers = [];
      
-    // searchBox.addListener('places_changed' , function(){
-    //   var places = seachbox.getPlaces();
+    searchBox.addListener('places_changed' , function(){
+      var places = seachbox.getPlaces();
 
-    //   if (places.length === 0) 
-    //     return;
+      if (places.length === 0) 
+        return;
 
-    // markers.forEach(function(m) { m.setMap(null); });
-    // markers = [];
+    markers.forEach(function(m) { m.setMap(null); });
+    markers = [];
 
-    // var bounds = new google.maps.LatLngBounds();
+    var bounds = new google.maps.LatLngBounds();
 
-    // places.forEach(function (p) {
-    //   if (lp.geometery)
-    //     return;
+    places.forEach(function (p) {
+      if (lp.geometery)
+        return;
 
-    //   markers.push(new google.maps.Marker({
-    //     map: map,
-    //     title: p.name,
-    //     position: p.geometery.location 
-    //   }));
+      markers.push(new google.maps.Marker({
+        map: map,
+        title: p.name,
+        position: p.geometery.location 
+      }));
 
-    //   if (p.geometery.viewport)
-    //     bounds.union(p.geometery.viewport);
-    //   else
-    //     bounds.extend(p.geometery.location);
-    // });
-    // map.fitBounds(bounds);
-    // })
+      if (p.geometery.viewport)
+        bounds.union(p.geometery.viewport);
+      else
+        bounds.extend(p.geometery.location);
+    });
+    map.fitBounds(bounds);
+    })
 
 // Getting current location info.
     infoWindow = new google.maps.InfoWindow;
