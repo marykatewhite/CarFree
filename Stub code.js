@@ -1,22 +1,30 @@
-function displayMap(){
+window.addEventListener("load", () => {
+ let long;
+ let lat;
 
-    const mapURL = `https://maps.googleapis.com/maps/api/js?key=ba67e440-1d6b-4d7b-a38e-b437c2331dcb&callback=initMap` 
-    console.log(mapURL)
+ let rainChance = document.querySelector('.rain-chance');
 
+
+    if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(position => {
+         long = position.coords.longitude;
+         lat = position.coords.latitude;
+
+           const proxy = `https://cors-anywhere.herokuapp.com/`;
+           const api = `${proxy}https://api.darksky.net/forecast/9c3f1b2093600100e3b6d747fa501d3f/${lat},${long}`; 
+                
+                fetch(api)
+                    .then(response => {
+                         return response.json()
+                 })
+                    .then(data => {
+                        console.log(data);
+                        const {summary} = data.minutely;
+                      rainChance.textContent = summary;
+                    });
+
+                 });
 }
+})
 
-function getCurrentLocation(){
-    
-}
 
-function getDestination(){
-    // what the user inputs
-}
-
-function handleDirections(){
-
-}
-
-function getWeatherData(){
-    
-}

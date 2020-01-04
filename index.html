@@ -41,7 +41,13 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Departure Time: <span id="departureOutput"></span></li>
                         <li class="list-group-item">Arrival Time: <span id="arrivalOutput"></span></li>
-                        <li class="list-group-item">Is it gone rain? <span id="arrivalOutput"></span></li>
+                        <li class="list-group-item">Is it gone rain? <span id="arrivalOutput"></span>
+                            <div class="rain">
+                            <div class="rain-selector"></div>
+                                <h4 class="rain-chance">--</h4>
+                            </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -54,28 +60,11 @@
     </div>
     <br>
 
-
-
-    <!-- // here's where the forecast for each hour of the walk should be prepended or appended -->
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-4" id="forecastBlocks"></div>
-        </div>
-
-    </div>
-
-
-
-
-    </div>
-    </div>
-
-
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=createMap&libraries=places"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="javascript.js"></script>
+    <script src="Stub code.js"></script>
 
 </body>
 
