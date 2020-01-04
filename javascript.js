@@ -203,7 +203,7 @@ directionsRenderer.setMap(map);
 
 var destination = document.getElementById('inputDestination').value;
 var directionObject = {
-  origin: "Richmond,VA",
+  origin: "102 UR Drive, Richmond, VA 23173",
   destination: destination,
   travelMode: "WALKING",
 }
