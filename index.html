@@ -33,14 +33,11 @@
                         aria-describedby="inputGroup-sizing-sm">
                 </div>
                 
-                <button type="button" class="btn btn-secondary btn-lg btn-block" id="submitBtn">Go</button>
+                <button onclick="handleBtnClick()" type="button" class="btn btn-secondary btn-lg btn-block" id="submitBtn">Go</button>
 
 
 
                 <div class="card" id="yourTrip">
-                    <div class="card-header">
-                        Your Trip:
-                    </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Departure Time: <span id="departureOutput"></span></li>
                         <li class="list-group-item">Arrival Time: <span id="arrivalOutput"></span></li>
@@ -77,6 +74,7 @@
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKK8KJohDPEhYbaSp_KUYUSW1KoxoHE5o&callback=createMap&libraries=places"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="javascript.js"></script>
 
 </body>
