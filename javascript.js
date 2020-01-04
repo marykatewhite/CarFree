@@ -222,7 +222,7 @@ directionsService.route(directionObject, function(result, status) {
   }
   );
   
-  let rainChance = document.querySelector('#rain-chance');
+let rainChance = document.querySelector('#rain-chance');
 
 
     if (navigator.geolocation) {
