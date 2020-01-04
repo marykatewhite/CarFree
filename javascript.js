@@ -1,44 +1,4 @@
-
-
-// var map, infoWindow;
-//       function initMap() {
-//         map = new google.maps.Map(document.getElementById('mapDisplay'), {
-//           center: {lat: 41.850033, lng: -87.6500523},
-//           zoom: 8
-//         });
-//         infoWindow = new google.maps.InfoWindow;
-
-//         // Try HTML5 geolocation.
-//         if (navigator.geolocation) {
-//           navigator.geolocation.getCurrentPosition(function(position) {
-//             var pos = {
-//               lat: position.coords.latitude,
-//               lng: position.coords.longitude
-//             };
-
-//             infoWindow.setPosition(pos);
-//             infoWindow.setContent('You are Here!');
-//             infoWindow.open(map);
-//             map.setCenter(pos);
-//           }, function() {
-//             handleLocationError(true, infoWindow, map.getCenter());
-//           });
-//         } else {
-//           // Browser doesn't support Geolocation
-//           handleLocationError(false, infoWindow, map.getCenter());
-//         }
-//       }
-
-//       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//         infoWindow.setPosition(pos);
-//         infoWindow.setContent(browserHasGeolocation ?
-//                               'Error: The Geolocation service failed.' :
-//                               'Error: Your browser doesn\'t support geolocation.');
-//         infoWindow.open(map);
-//       }
-
-    
-
+// Created the map and map settings to be displayed on the page.
   var map, infoWindow;
 
   function createMap(){
@@ -156,47 +116,49 @@
         },
         ]
     };
-
+// stuck here....
     map = new google.maps.Map(document.getElementById("mapDisplay"), options);
 
     var input = document.getElementById("inputDestination");
     var searchBox = new google.maps.places.SearchBox(input);
 
-    map.addListener("bound_changed" , function() {
+    map.addListener("bounds_changed" , function() {
       searchBox.setBounds(map.getBounds());
     });
 
-    var markers = [];
-    searchBox.addListener('places_changed' , function(){
-      var places = seachbox.getPlaces();
 
-      if (places.length === 0) 
-        return;
+    // var markers = [];
+     
+    // searchBox.addListener('places_changed' , function(){
+    //   var places = seachbox.getPlaces();
 
-    markers.forEach(function(m) { m.setMap(null); });
-    markers = [];
+    //   if (places.length === 0) 
+    //     return;
 
-    var bounds = new google.maps.LatLngBounds();
+    // markers.forEach(function(m) { m.setMap(null); });
+    // markers = [];
 
-    places.forEach(function (p) {
-      if (lp.geometery)
-        return;
+    // var bounds = new google.maps.LatLngBounds();
 
-      markers.push(new google.maps.Marker({
-        map: map,
-        title: p.name,
-        position: p.geometery.location 
-      }));
+    // places.forEach(function (p) {
+    //   if (lp.geometery)
+    //     return;
 
-      if (p.geometery.viewport)
-        bounds.union(p.geometery.viewport);
-      else
-        bounds.extend(p.geometery.location);
-    });
-    map.fitBounds(bounds);
-    })
+    //   markers.push(new google.maps.Marker({
+    //     map: map,
+    //     title: p.name,
+    //     position: p.geometery.location 
+    //   }));
 
+    //   if (p.geometery.viewport)
+    //     bounds.union(p.geometery.viewport);
+    //   else
+    //     bounds.extend(p.geometery.location);
+    // });
+    // map.fitBounds(bounds);
+    // })
 
+// Getting current location info.
     infoWindow = new google.maps.InfoWindow;
 
     if (navigator.geolocation) {
@@ -221,3 +183,8 @@ function handleLocationError (content, position){
   infoWindow.setContent(content);
   infoWindow.open(map);
 }
+
+  google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(event.latLng);
+});
+
