@@ -130,38 +130,7 @@ function createMap(){
     searchBox.setBounds(map.getBounds());
   });
 
-// !!--This code was first created to change to the destination entere, The code doesn't really influence the functinoality, so I commented it out.
 
-  // var markers = [];
-   
-  // searchBox.addListener('places_changed' , function(){
-  //   var places = seachbox.getPlaces();
-
-  //   if (places.length === 0) 
-  //     return;
-
-  // markers.forEach(function(m) { m.setMap(null); });
-  // markers = [];
-
-  // var bounds = new google.maps.LatLngBounds();
-
-  // places.forEach(function (p) {
-  //   if (lp.geometery)
-  //     return;
-
-  //   markers.push(new google.maps.Marker({
-  //     map: map,
-  //     title: p.name,
-  //     position: p.geometery.location 
-  //   }));
-
-  //   if (p.geometery.viewport)
-  //     bounds.union(p.geometery.viewport);
-  //   else
-  //     bounds.extend(p.geometery.location);
-  // });
-  // map.fitBounds(bounds);
-  // })
 
 // Getting current location info, and displays a marker of the user current location
 
@@ -231,7 +200,9 @@ directionsService.route(directionObject, function(result, status) {
 
   // This API call handles the weather data,  It will ask the user for current location information again.  We couldn't figure out how to have one location grab for both API calls.
   
-let rainChance = document.querySelector('#rain-chance');
+
+
+      let rainChance = document.querySelector('#rain-chance');
 
 
     if (navigator.geolocation) {
